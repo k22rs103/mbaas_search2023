@@ -59,7 +59,7 @@
     }
     function searchIntelligence(){
         let TestDataClass = ncmb.DataStore(db);
-        let intelligence = parseInt($("#intelligence").val());
+        let intelligence = $("#intelligence").val();
         TestDataClass
             .equalTo("intelligence",intelligence)
             .fetchAll()
@@ -108,6 +108,10 @@
   <div>
     <label for="level">level:</label>
     <input id="level" type="number" placeholder="monster level">
+  </div>
+   <div>
+    <label for="intelligence">intelligence:</label>
+    <input id="intelligence" type="text" placeholder="intelligence score">
   </div>
   <div id="button">
     <button class="btn" onclick="fetchAll()">Fetch All</button>
