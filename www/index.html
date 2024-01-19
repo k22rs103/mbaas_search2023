@@ -57,6 +57,16 @@
                 showResults(results);
             })
     }
+    function searchLevelGT(){
+        let TestDataClass = ncmb.DataStore(db);
+        let level = parseInt($("#level").val());
+        TestDataClass
+            .greaterThanOrEqualTo("level",level)
+            .fetchAll()
+            .then(function(results){
+                showResults(results);
+            })
+    }
 
     function showResults(results) {
       // テーブルのヘッダを生成
