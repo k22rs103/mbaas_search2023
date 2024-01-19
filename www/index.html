@@ -57,6 +57,16 @@
                 showResults(results);
             })
     }
+    function searchIntelligence(){
+        let TestDataClass = ncmb.DataStore(db);
+        let intelligence = parseInt($("#intelligence").val());
+        TestDataClass
+            .equalTo("intelligence",intelligence)
+            .fetchAll()
+            .then(function(results){
+                showResults(results);
+            })
+    }
     function searchLevelGT(){
         let TestDataClass = ncmb.DataStore(db);
         let level = parseInt($("#level").val());
