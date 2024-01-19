@@ -70,7 +70,7 @@
 
     function searchLevelGT(){
         let TestDataClass = ncmb.DataStore(db);
-        let level = parseInt($("#level").val());
+        let level =$("#level").val();
         TestDataClass
             .greaterThanOrEqualTo("level",level)
             .fetchAll()
@@ -82,7 +82,7 @@
 
     function showResults(results) {
       // テーブルのヘッダを生成
-      let msg = "<table><tr><th>name</th><th>Lvl</th><th>attack</th><th>defence</th><th>intelligence</th></tr>";
+      let msg = "<table><tr><th>name</th><th>Lvl</th><th>attack</th><th>defence</th><th>intelligence</th><th>GPA</th></tr>";
       for (let i = 0; i < results.length; i++) {
         // 各データを収めた表の列を生成
         msg += "<tr>";
@@ -91,6 +91,7 @@
         msg += "<td class='num'>" + results[i].attack + "</td>";
         msg += "<td class='num'>" + results[i].defence + "</td>";
         msg += "<td class='num'>" + results[i].intelligence + "</td>";
+        msg += "<td class='num'>" + results[i].GPA + "</td>";
         msg += "</tr>";
       }
       // テーブルのテイラを生成
@@ -114,10 +115,6 @@
     <label for="intelligence">intelligence:</label>
     <input id="intelligence" type="text" placeholder="intelligence score">
   </div>
-  <div>
-    <label for="gpa">gpa:</gpa>
-    <input id="gpa" type="text" placeholder="gpa score">
-  </div>
   <div id="button">
     <button class="btn" onclick="fetchAll()">Fetch All</button>
     <button class="btn" onclick="searchName()">Name</button><br>
@@ -125,7 +122,6 @@
     <button class="btn" onclick="searchLevel()">Level</button>
     <button class="btn" onclick="searchLevelGT()">&lt; Over </button><br>
     <button class="btn" onclick="searchIntelligence()"> Intelligence </button><br>
-    <button class="btn" onclick="searchGPA()">GPA </button><br>
   </div>
   <div id="message">message area</div>
 </body>
