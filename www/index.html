@@ -67,6 +67,7 @@
                 showResults(results);
             })
     }
+
     function searchLevelGT(){
         let TestDataClass = ncmb.DataStore(db);
         let level = parseInt($("#level").val());
@@ -113,6 +114,10 @@
     <label for="intelligence">intelligence:</label>
     <input id="intelligence" type="text" placeholder="intelligence score">
   </div>
+  <div>
+    <label for="gpa">gpa:</gpa>
+    <input id="gpa" type="text" placeholder="gpa score">
+  </div>
   <div id="button">
     <button class="btn" onclick="fetchAll()">Fetch All</button>
     <button class="btn" onclick="searchName()">Name</button><br>
@@ -120,6 +125,7 @@
     <button class="btn" onclick="searchLevel()">Level</button>
     <button class="btn" onclick="searchLevelGT()">&lt; Over </button><br>
     <button class="btn" onclick="searchIntelligence()"> Intelligence </button><br>
+    <button class="btn" onclick="searchGPA()">GPA </button><br>
   </div>
   <div id="message">message area</div>
 </body>
